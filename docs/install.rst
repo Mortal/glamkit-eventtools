@@ -17,11 +17,11 @@ Installation
 
 0. Download the code; put it into your project's directory or run ``python setup.py install`` to install to your envirnoment.
 
-1. Install the requirements (using pip).
+1. Install the requirements (using pip)::
 
     pip install -e REQUIREMENTS.txt
 
-2. Create an `events` app, where you will define what Events look like for your project.
+2. Create an `events` app, where you will define what Events look like for your project::
 
     ./manage.py startapp events
 
@@ -53,7 +53,7 @@ Models Definition
 -----------------
 
 5. Define models in your new app. We suggest calling the Event model 'Event'
-to easily use the provided templates. In ``events/models.py``:
+to easily use the provided templates. In ``events/models.py``::
 
     from django.db import models
     from eventtools.models import EventModel, OccurrenceModel, GeneratorModel #, ExclusionModel
@@ -76,7 +76,7 @@ to easily use the provided templates. In ``events/models.py``:
 Admin
 -----
 
-6. Set up admin. In ``events/admin.py``:
+6. Set up admin. In ``events/admin.py``::
 
     from django.contrib import admin
     from eventtools.admin import EventAdmin, OccurrenceAdmin
@@ -88,7 +88,7 @@ Admin
 Views and URLs
 --------------
     
-7. Set up view URLs. In ``events/urls.py``
+7. Set up view URLs. In ``events/urls.py``::
 
     from django.conf.urls.defaults import *
     from eventtools.views import EventViews
@@ -100,7 +100,7 @@ Views and URLs
         url(r'^', include(views.urls)),
     )
     
-8. In your main ``urls.py``:
+8. In your main ``urls.py``::
 
     urlpatterns += patterns('',
         url(r'^events/', include('events.urls')),    
